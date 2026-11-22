@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/tiny-chess-01/risadeden76/tiny-chess/rank.svg)](https://make.fun/bounty/tiny-chess-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
 [![reward](https://make.fun/badge/tiny-chess-01/risadeden76/tiny-chess/reward.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
 
-An original 0x88 chess engine in Python — alpha-beta search, fixed node budget, PeSTO tapered evaluation — packed into 4,080 bytes.
+An original 0x88 chess engine in Python — alpha-beta search, fixed node budget, PeSTO tapered evaluation — packed into 4,068 bytes.
 
 ## Run it
 
@@ -18,7 +18,7 @@ python3 main.py
 
 ## Files
 
-- `main.py` — the entry, **4,080 bytes** (under the 4,096 cap). It is the
+- `main.py` — the entry, **4,068 bytes** (under the 4,096 cap). It is the
   kit's makefun-compress packing of the readable source (see below); it
   decompresses and execs itself at import. Stdlib only, no other files read.
 - `LICENSE` — MIT.
