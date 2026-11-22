@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/tiny-chess-01/risadeden76/tiny-chess/rank.svg)](https://make.fun/bounty/tiny-chess-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
 [![reward](https://make.fun/badge/tiny-chess-01/risadeden76/tiny-chess/reward.svg)](https://make.fun/bounty/tiny-chess-01?utm_source=github&utm_medium=readme&utm_campaign=tiny-chess-01)
 
-An original 0x88 chess engine in Python — alpha-beta search, fixed node budget, phase-interpolated king table — packed into 3,408 bytes.
+An original 0x88 chess engine in Python — alpha-beta search, fixed node budget, PeSTO tapered evaluation — packed into 4,080 bytes.
 
 ## Run it
 
@@ -18,7 +18,7 @@ python3 main.py
 
 ## Files
 
-- `main.py` — the entry, **3,408 bytes** (under the 4,096 cap). It is the
+- `main.py` — the entry, **4,080 bytes** (under the 4,096 cap). It is the
   kit's makefun-compress packing of the readable source (see below); it
   decompresses and execs itself at import. Stdlib only, no other files read.
 - `LICENSE` — MIT.
@@ -35,10 +35,8 @@ python3 main.py
 - Transposition table, 2 killer moves per ply, history heuristic,
   MVV-LVA capture ordering, null-move pruning, quiescence over
   captures/promotions with delta pruning (all replies when in check).
-- Evaluation: material + formula piece-square tables (least-squares fit
-  to a standard table set) + bishop pair, with a **phase-interpolated
-  king table** (middlegame back-rank safety blending into endgame
-  centralisation).
+- Evaluation: PeSTO tapered piece-square tables (Texel-tuned midgame +
+  endgame, interpolated by game phase 0-24).
 - Protocol: talks to the make.fun env over HTTP (`/game`, `/move`,
   `/resign`), replies in UCI, filters moves against the env's legal list.
 
